@@ -7,6 +7,7 @@ function App() {
 
 
   const [inputText, setInputText] = useState("");
+  const [todos, setTodos] = useState([])
 
 
   return (
@@ -14,8 +15,12 @@ function App() {
       <header>
         <h1>Aniket's ToDo List</h1>
       </header>
-      <Form setInputText={setInputText}/>
-      <TodoList/>
+      <Form 
+        setInputText={setInputText} 
+        inputText={inputText} 
+        todos={todos} 
+        setTodos={setTodos}/>
+      <TodoList setTodos={setTodos}/>
     </div>
   );
 }

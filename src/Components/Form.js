@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React from 'react'
+
 
 const Form = (props) => {
 
@@ -6,14 +7,21 @@ const Form = (props) => {
     
    const inputTextHandler = (event) => {
        props.setInputText(event.target.value)
-       
+   }
+
+   const submitHandler = (event) => {
+    event.preventDefault()
+    props.setTodos([
+        ...props.todos, {id: Math.random() * 1000, text: props.input, completed: false, }
+    ])
+    props.setInputText('')
    }
 
 
     return (
         <form>
-            <input type='text' className='todo-input' onChange={inputTextHandler}/>
-            <button className='todo-button' type='submit'>
+            <input type='text' className='todo-input' onChange={inputTextHandler} value={props.inputText}/>
+            <button className='todo-button' type='submit' onClick={submitHandler}>
                 <i className='fas fa-plus-square'></i>
             </button> 
             <div className='select'>
