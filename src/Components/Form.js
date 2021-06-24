@@ -1,17 +1,18 @@
 import React, {useState} from 'react'
 
-const Form = () => {
+const Form = (props) => {
 
-   const [inputText, setInputText] =  useState('')
+   
     
-   const inputHandler = (event) => {
-       setInputText(event.target.value)
-       console.log(inputText);
+   const inputTextHandler = (event) => {
+       props.setInputText(event.target.value)
+       
    }
+
 
     return (
         <form>
-            <input type='text' className='todo-input' onChange={inputHandler}/>
+            <input type='text' className='todo-input' onChange={inputTextHandler}/>
             <button className='todo-button' type='submit'>
                 <i className='fas fa-plus-square'></i>
             </button> 
