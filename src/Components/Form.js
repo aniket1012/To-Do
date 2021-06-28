@@ -18,7 +18,6 @@ const Form = (props) => {
    }
 
    const statusHandler = (event) => {
-    console.log(event.target.value, props.status);
     props.setStatus(event.target.value)
    }
 

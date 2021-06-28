@@ -5,13 +5,16 @@ const TodoList = (props) => {
     return (
       <div className="todo-container">
         <ul className="todo-list">
-            {props.todos.map(todo => {
-                return <Todo  
-                          key={todo.id} 
-                          todo={todo} 
-                          setToDos={props.setToDos} 
-                          todos={props.todos}
-                        />
+            {props.filteredToDos.map(todo => {
+                return (
+                  <Todo
+                    key={todo.id}
+                    todo={todo}
+                    setToDos={props.setToDos}
+                    todos={props.todos}
+                    filteredToDos={props.filteredToDos}
+                  />
+                );
             })}
         </ul>
       </div>
