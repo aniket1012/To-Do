@@ -7,7 +7,7 @@ function App() {
 
 
   const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([])
+  const [todos, setToDos] = useState([])
 
 
   return (
@@ -19,8 +19,10 @@ function App() {
         setInputText={setInputText} 
         inputText={inputText} 
         todos={todos} 
-        setTodos={setTodos}/>
-      <TodoList setTodos={setTodos} todos={todos}/>
+        setToDos={setToDos}/>
+      <TodoList 
+        setToDos={setToDos} 
+        todos={todos}/>
     </div>
   );
 }

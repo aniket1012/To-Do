@@ -11,7 +11,7 @@ const Form = (props) => {
 
    const submitHandler = (event) => {
     event.preventDefault()
-    props.setTodos([
+    props.setToDos([
         ...props.todos, {id: Math.random() * 1000, text: props.inputText, completed: false, }
     ])
     props.setInputText('')
